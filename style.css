@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f2f5;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -14,6 +15,7 @@ body {
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 h1 {
@@ -62,4 +64,51 @@ h1 {
 #generate-btn:hover {
     background-color: #0056b3;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.theme-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-switcher button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#light-mode-btn {
+    background-color: #fff;
+    color: #333;
+}
+
+#dark-mode-btn {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode h1 {
+    color: #e0e0e0;
+}
+
+body.dark-mode #generate-btn {
+    background-color: #0056b3;
+}
+
+body.dark-mode #generate-btn:hover {
+    background-color: #003d80;
 }

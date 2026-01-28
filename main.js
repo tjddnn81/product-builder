@@ -1,5 +1,9 @@
-document.getElementById('generate-btn').addEventListener('click', () => {
-    const numbersContainer = document.getElementById('numbers-container');
+const generateBtn = document.getElementById('generate-btn');
+const numbersContainer = document.getElementById('numbers-container');
+const lightModeBtn = document.getElementById('light-mode-btn');
+const darkModeBtn = document.getElementById('dark-mode-btn');
+
+generateBtn.addEventListener('click', () => {
     numbersContainer.innerHTML = '';
     const lottoNumbers = generateLottoNumbers();
 
@@ -10,6 +14,16 @@ document.getElementById('generate-btn').addEventListener('click', () => {
         circle.style.backgroundColor = getRandomColor();
         numbersContainer.appendChild(circle);
     });
+});
+
+lightModeBtn.addEventListener('click', () => {
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('theme', 'light');
+});
+
+darkModeBtn.addEventListener('click', () => {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark');
 });
 
 function generateLottoNumbers() {
@@ -30,3 +44,11 @@ function getRandomColor() {
     ];
     return colors[Math.floor(Math.random() * colors.length)];
 }
+
+// 페이지 로드 시 저장된 테마 적용
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+});
