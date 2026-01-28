@@ -1,10 +1,12 @@
 body {
     font-family: 'Helvetica Neue', sans-serif;
     display: flex;
+    flex-direction: column; /* 세로 정렬 */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px 0; /* 상하 여백 추가 */
     background-color: #f0f2f5;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -16,9 +18,12 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, box-shadow 0.3s;
+    width: 90%; /* 너비 조정 */
+    max-width: 500px; /* 최대 너비 설정 */
+    margin-bottom: 20px; /* 컨테이너 간 여백 */
 }
 
-h1 {
+h1, h2 {
     margin-bottom: 30px;
     color: #333;
 }
@@ -49,7 +54,7 @@ h1 {
     transform: scale(1.1);
 }
 
-#generate-btn {
+#generate-btn, .partnership-form button {
     padding: 15px 30px;
     font-size: 18px;
     color: white;
@@ -61,7 +66,7 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#generate-btn:hover {
+#generate-btn:hover, .partnership-form button:hover {
     background-color: #0056b3;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -90,6 +95,27 @@ h1 {
     color: #fff;
 }
 
+/* Partnership Form Styles */
+.partnership-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.partnership-form label {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.partnership-form input, 
+.partnership-form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
@@ -101,14 +127,24 @@ body.dark-mode .container {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-body.dark-mode h1 {
+body.dark-mode h1, 
+body.dark-mode h2 {
     color: #e0e0e0;
 }
 
-body.dark-mode #generate-btn {
+body.dark-mode #generate-btn, 
+body.dark-mode .partnership-form button {
     background-color: #0056b3;
 }
 
-body.dark-mode #generate-btn:hover {
+body.dark-mode #generate-btn:hover, 
+body.dark-mode .partnership-form button:hover {
     background-color: #003d80;
+}
+
+body.dark-mode .partnership-form input, 
+body.dark-mode .partnership-form textarea {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border-color: #444;
 }
