@@ -23,6 +23,43 @@ body {
     margin-bottom: 20px; /* 컨테이너 간 여백 */
 }
 
+.info-section {
+    text-align: left;
+}
+
+.info-section h2 {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.info-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-section ul li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.info-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.info-section th, .info-section td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.info-section th {
+    background-color: #f7f7f7;
+}
+
 h1, h2 {
     margin-bottom: 30px;
     color: #333;
@@ -116,6 +153,15 @@ h1, h2 {
     font-size: 16px;
 }
 
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #777;
+    max-width: 500px;
+    line-height: 1.5;
+}
+
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
@@ -125,6 +171,7 @@ body.dark-mode {
 body.dark-mode .container {
     background-color: #1e1e1e;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border-color: #333;
 }
 
 body.dark-mode h1, 
@@ -147,4 +194,21 @@ body.dark-mode .partnership-form textarea {
     background-color: #2c2c2c;
     color: #e0e0e0;
     border-color: #444;
+}
+
+body.dark-mode .info-section h2 {
+    border-bottom-color: #333;
+}
+
+body.dark-mode .info-section th, 
+body.dark-mode .info-section td {
+    border-color: #444;
+}
+
+body.dark-mode .info-section th {
+    background-color: #2c2c2c;
+}
+
+body.dark-mode .footer {
+    color: #aaa;
 }
