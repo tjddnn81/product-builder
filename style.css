@@ -24,7 +24,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.container {
+.container, .hub-card {
     background: var(--card-color);
     padding: 30px 40px;
     border-radius: 20px;
@@ -36,7 +36,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container:hover {
+.container:hover, .hub-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px var(--shadow-color);
 }
@@ -105,7 +105,37 @@ h1 {
     filter: brightness(1.2);
 }
 
-/* Distinguishing CTA buttons */
+/* Content Hub Styles */
+.content-hub {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 90%;
+    max-width: 1130px; /* (550px * 2) + 30px gap */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+}
+
+.hub-card {
+    flex: 1;
+    min-width: 300px; /* Minimum width for cards */
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hub-card h2 {
+    font-size: 1.6em;
+    text-shadow: none;
+}
+
+.hub-card p {
+    flex-grow: 1;
+    color: #ccc;
+    line-height: 1.8;
+}
+
 .cta-link {
     background: linear-gradient(145deg, #28a745, #20c997);
 }
@@ -164,7 +194,7 @@ h1 {
 
 /* Form Styles */
 .partnership-form input, .partnership-form textarea {
-    width: 100%;
+    width: calc(100% - 30px); /* Adjust for padding */
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;

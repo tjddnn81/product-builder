@@ -10,16 +10,12 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="theme-switcher">
-        <button id="light-mode-btn">라이트 모드</button>
-        <button id="dark-mode-btn">다크 모드</button>
-    </div>
     <div class="container">
-        <h1>로또 번호 생성기</h1>
+        <h1>Lotto Generator</h1>
         <div class="numbers" id="numbers-container">
             <!-- 번호가 여기에 생성됩니다 -->
         </div>
-        <button id="generate-btn">번호 생성</button>
+        <button id="generate-btn">Generate Numbers</button>
     </div>
 
     <!-- 로또 정보 섹션 -->
@@ -27,8 +23,8 @@
         <h2>알아두면 쓸데있는 로또 상식</h2>
         <ul>
             <li><strong>1등 당첨 확률:</strong> 로또 1등에 당첨될 확률은 약 814만 분의 1입니다.</li>
-            <li><strong>세금 정보:</strong> 5만원 초과 3억원 이하의 당첨금에는 22%, 3억원을 초과하는 금액에 대해서는 33%의 세금이 부과됩니다. (소득세+지방소득세)</li>
-            <li><strong>당첨금 수령:</strong> 1등은 농협은행 본점, 2등부터 5등까지는 전국의 농협은행 각 지점 및 로또 판매점에서 수령할 수 있습니다.</li>
+            <li><strong>세금 정보:</strong> 5만원 초과 3억원 이하의 당첨금에는 22%, 3억원을 초과하는 금액에 대해서는 33%의 세금이 부과됩니다.</li>
+            <li><strong>당첨금 수령:</strong> 1등은 농협은행 본점, 2~5등은 전국 농협은행 및 로또 판매점에서 수령할 수 있습니다.</li>
         </ul>
     </div>
 
@@ -71,18 +67,18 @@
         </div>
     </div>
 
-    <!-- 꿈해몽 콘텐츠 링크 섹션 -->
-    <div class="container info-section">
-        <h2>꿈으로 풀어보는 행운의 숫자</h2>
-        <p style="text-align: center;">어젯밤 좋은 꿈 꾸셨나요? 돼지 꿈, 조상님 꿈... 길몽이 암시하는 행운의 번호를 확인해보세요.</p>
-        <a href="dream-content.html" class="cta-link">꿈해몽으로 행운 번호 찾기</a>
-    </div>
-
-    <!-- 재무 가이드 링크 섹션 -->
-    <div class="container info-section">
-        <h2>1등 당첨, 그 후: 부자로 사는 법</h2>
-        <p style="text-align: center;">인생역전의 꿈! 만약 1등에 당첨된다면, 당신의 소중한 자산을 어떻게 지키고 불려나갈 것인가요? 전문가의 현실적인 재무 가이드를 미리 만나보세요.</p>
-        <a href="financial-guide.html" class="cta-link-secondary">전문 재무 가이드 바로가기</a>
+    <!-- 콘텐츠 허브 섹션 -->
+    <div class="content-hub">
+        <div class="hub-card">
+            <h2>꿈으로 풀어보는 행운의 숫자</h2>
+            <p>어젯밤 좋은 꿈 꾸셨나요? 길몽이 암시하는 행운의 번호를 확인해보세요.</p>
+            <a href="dream-content.html" class="cta-link">꿈해몽 바로가기</a>
+        </div>
+        <div class="hub-card">
+            <h2>1등 당첨, 부자로 사는 법</h2>
+            <p>당첨 이후, 당신의 소중한 자산을 어떻게 지키고 불려나갈 것인가요? 전문가의 현실적인 재무 가이드를 만나보세요.</p>
+            <a href="financial-guide.html" class="cta-link-secondary">재무 가이드 바로가기</a>
+        </div>
     </div>
 
     <div class="container partnership-form">
@@ -98,7 +94,6 @@
         </form>
     </div>
 
-    <!-- 책임감 있는 게임 문구 -->
     <footer class="footer">
         <p>본 사이트에서 제공하는 로또 번호는 무작위로 생성된 번호이며, 당첨을 보장하지 않습니다. 로또 구매는 즐거움의 수단으로만 이용하시고, 책임감 있게 즐기시길 바랍니다.</p>
     </footer>
