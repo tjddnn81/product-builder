@@ -91,7 +91,7 @@ h1, h2 {
     transform: scale(1.1);
 }
 
-#generate-btn, .partnership-form button {
+#generate-btn, #run-simulator-btn, .partnership-form button {
     padding: 15px 30px;
     font-size: 18px;
     color: white;
@@ -101,9 +101,10 @@ h1, h2 {
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* 버튼 너비 확장 */
 }
 
-#generate-btn:hover, .partnership-form button:hover {
+#generate-btn:hover, #run-simulator-btn:hover, .partnership-form button:hover {
     background-color: #0056b3;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -130,6 +131,33 @@ h1, h2 {
 #dark-mode-btn {
     background-color: #333;
     color: #fff;
+}
+
+/* Simulator Styles */
+.simulator-controls {
+    margin-bottom: 20px;
+}
+
+.simulator-result-box {
+    border: 2px dashed #007BFF;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.simulator-result-box.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Partnership Form Styles */
@@ -180,11 +208,13 @@ body.dark-mode h2 {
 }
 
 body.dark-mode #generate-btn, 
+body.dark-mode #run-simulator-btn,
 body.dark-mode .partnership-form button {
     background-color: #0056b3;
 }
 
 body.dark-mode #generate-btn:hover, 
+body.dark-mode #run-simulator-btn:hover,
 body.dark-mode .partnership-form button:hover {
     background-color: #003d80;
 }
@@ -211,4 +241,8 @@ body.dark-mode .info-section th {
 
 body.dark-mode .footer {
     color: #aaa;
+}
+
+body.dark-mode .simulator-result-box {
+    border-color: #0056b3;
 }
