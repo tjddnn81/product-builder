@@ -160,6 +160,29 @@ h1, h2 {
     transform: translateY(0);
 }
 
+/* CTA Link Style */
+.cta-link {
+    display: block;
+    width: 100%;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #28a745; /* Green color for distinction */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.cta-link:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 /* Partnership Form Styles */
 .partnership-form form {
     display: flex;
@@ -245,4 +268,33 @@ body.dark-mode .footer {
 
 body.dark-mode .simulator-result-box {
     border-color: #0056b3;
+}
+
+body.dark-mode .cta-link {
+    background-color: #218838;
+}
+
+body.dark-mode .cta-link:hover {
+    background-color: #1e7e34;
+}
+
+/* Dream Content Page Styles */
+.dream-entry {
+    margin-bottom: 40px;
+}
+
+.dream-entry h2 {
+    border-bottom: none;
+    text-align: left;
+}
+
+.dream-entry p {
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 40px;
 }
