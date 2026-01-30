@@ -1,68 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-color: #1a1a1a;
+    --card-color: #2a2a2a;
+    --primary-color: #00aaff;
+    --secondary-color: #00ffaa;
+    --text-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.7);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
 body {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
-    flex-direction: column; /* 세로 정렬 */
-    justify-content: flex-start; /* 상단 정렬 */
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 20px 0; /* 상하 여백 추가 */
-    background-color: #f0f2f5;
+    padding: 40px 20px;
+    background: var(--bg-color);
+    color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
-    text-align: center;
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s;
-    width: 90%; /* 너비 조정 */
-    max-width: 500px; /* 최대 너비 설정 */
-    margin-bottom: 20px; /* 컨테이너 간 여백 */
+    background: var(--card-color);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px var(--shadow-color);
+    width: 90%;
+    max-width: 550px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-section {
-    text-align: left;
-}
-
-.info-section h2 {
-    text-align: center;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
-
-.info-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.info-section ul li {
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-.info-section table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.info-section th, .info-section td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
-}
-
-.info-section th {
-    background-color: #f7f7f7;
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px var(--shadow-color);
 }
 
 h1, h2 {
+    text-align: center;
     margin-bottom: 30px;
-    color: #333;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
 }
 
 .numbers {
@@ -70,6 +58,7 @@ h1, h2 {
     justify-content: center;
     gap: 15px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .number-circle {
@@ -82,77 +71,90 @@ h1, h2 {
     font-size: 24px;
     font-weight: bold;
     color: white;
-    background-color: #4CAF50; /* Default color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
+    background: linear-gradient(145deg, #00aaff, #00ffaa);
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+    transition: all 0.3s ease;
+    animation: float 2s ease-in-out infinite;
 }
 
-.number-circle:hover {
-    transform: scale(1.1);
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
-#generate-btn, #run-simulator-btn, .partnership-form button {
-    padding: 15px 30px;
+#generate-btn, .cta-link, .cta-link-secondary, .partnership-form button {
+    padding: 18px 30px;
     font-size: 18px;
+    font-weight: 600;
     color: white;
-    background-color: #007BFF;
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%; /* 버튼 너비 확장 */
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.3);
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
 }
 
-#generate-btn:hover, #run-simulator-btn:hover, .partnership-form button:hover {
-    background-color: #0056b3;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+#generate-btn:hover, .cta-link:hover, .cta-link-secondary:hover, .partnership-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 170, 0.4);
+    filter: brightness(1.2);
 }
 
-.theme-switcher {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+/* Distinguishing CTA buttons */
+.cta-link {
+    background: linear-gradient(145deg, #28a745, #20c997);
 }
 
-.theme-switcher button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.cta-link-secondary {
+    background: linear-gradient(145deg, #007bff, #0056b3);
 }
 
-#light-mode-btn {
-    background-color: #fff;
-    color: #333;
+/* Info Section Specifics */
+.info-section h2 {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    text-shadow: none;
+    font-size: 1.8em;
 }
 
-#dark-mode-btn {
-    background-color: #333;
-    color: #fff;
+.info-section ul li {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.info-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+.info-section th, .info-section td {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    text-align: center;
+}
+
+.info-section th {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Simulator Styles */
-.simulator-controls {
-    margin-bottom: 20px;
-}
-
 .simulator-result-box {
-    border: 2px dashed #007BFF;
+    border: 2px dashed var(--primary-color);
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
     border-radius: 10px;
-    text-align: center;
     font-size: 1.2em;
-    font-weight: bold;
     min-height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
     opacity: 0;
     transform: translateY(20px);
+    transition: all 0.5s ease;
 }
 
 .simulator-result-box.visible {
@@ -160,59 +162,15 @@ h1, h2 {
     transform: translateY(0);
 }
 
-/* CTA Link Styles */
-.cta-link, .cta-link-secondary {
-    display: block;
+/* Form Styles */
+.partnership-form input, .partnership-form textarea {
     width: 100%;
-    padding: 15px 30px;
-    font-size: 18px;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    text-decoration: none;
-    margin-top: 20px;
-}
-
-.cta-link {
-    background-color: #28a745; /* Green */
-}
-
-.cta-link:hover {
-    background-color: #218838;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.cta-link-secondary {
-    background-color: #0056b3; /* Dark Blue */
-}
-
-.cta-link-secondary:hover {
-    background-color: #003d80;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Partnership Form Styles */
-.partnership-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.partnership-form label {
-    text-align: left;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.partnership-form input, 
-.partnership-form textarea {
-    padding: 12px;
+    padding: 15px;
     margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-size: 16px;
 }
 
@@ -220,101 +178,31 @@ h1, h2 {
     text-align: center;
     padding: 20px;
     font-size: 14px;
-    color: #777;
-    max-width: 500px;
-    line-height: 1.5;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-body.dark-mode .container {
-    background-color: #1e1e1e;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    border-color: #333;
-}
-
-body.dark-mode h1, 
-body.dark-mode h2 {
-    color: #e0e0e0;
-}
-
-body.dark-mode #generate-btn, 
-body.dark-mode #run-simulator-btn,
-body.dark-mode .partnership-form button {
-    background-color: #007BFF;
-}
-
-body.dark-mode #generate-btn:hover, 
-body.dark-mode #run-simulator-btn:hover,
-body.dark-mode .partnership-form button:hover {
-    background-color: #0056b3;
-}
-
-body.dark-mode .partnership-form input, 
-body.dark-mode .partnership-form textarea {
-    background-color: #2c2c2c;
-    color: #e0e0e0;
-    border-color: #444;
-}
-
-body.dark-mode .info-section h2 {
-    border-bottom-color: #333;
-}
-
-body.dark-mode .info-section th, 
-body.dark-mode .info-section td {
-    border-color: #444;
-}
-
-body.dark-mode .info-section th {
-    background-color: #2c2c2c;
-}
-
-body.dark-mode .footer {
-    color: #aaa;
-}
-
-body.dark-mode .simulator-result-box {
-    border-color: #007BFF;
-}
-
-body.dark-mode .cta-link {
-    background-color: #218838;
-}
-
-body.dark-mode .cta-link:hover {
-    background-color: #1e7e34;
-}
-
-body.dark-mode .cta-link-secondary {
-    background-color: #003d80;
-}
-
-body.dark-mode .cta-link-secondary:hover {
-    background-color: #002b5a;
+    color: #888;
+    max-width: 550px;
+    line-height: 1.6;
 }
 
 /* Dream Content Page Styles */
-.dream-entry {
-    margin-bottom: 40px;
-}
-
-.dream-entry h2 {
-    border-bottom: none;
-    text-align: left;
-}
-
-.dream-entry p {
-    text-align: justify;
-    line-height: 1.8;
-}
-
 .intro-text {
     text-align: center;
     font-size: 1.1em;
     margin-bottom: 40px;
+    line-height: 1.8;
+    color: #ccc;
 }
+
+.dream-entry h2 {
+    text-align: left;
+    border-bottom: none;
+    font-size: 1.5em;
+}
+
+.dream-entry p {
+    text-align: justify;
+    line-height: 1.9;
+    color: #bbb;
+}
+
+/* Remove theme switcher as we are going full dark mode */
+.theme-switcher { display: none; }
